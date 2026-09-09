@@ -72,56 +72,42 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService }) => {
     setStatus('loading');
     setErrorMessage('');
 
-    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '';
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '20542d03-bb3d-44d0-b1b9-c5e0e9c36e20';
 
-    // If access key is configured, perform live background delivery to email
-    if (accessKey) {
-      try {
-        const response = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-          },
-          body: JSON.stringify({
-            access_key: accessKey,
-            from_name: formData.name,
-            subject: `New Client Enquiry from ${formData.name} - ${formData.service}`,
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone,
-            service: formData.service,
-            message: formData.projectDescription,
-          }),
-        });
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          from_name: formData.name,
+          subject: `New Client Enquiry from ${formData.name} - ${formData.service}`,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.projectDescription,
+        }),
+      });
 
-        const result = await response.json();
+      const result = await response.json();
 
-        if (result.success) {
-          setStatus('success');
-          setSuccessMessage(
-            `Thank you, ${formData.name}! Your enquiry for ${formData.service} has been delivered directly to ${BRAND_INFO.email}. Muthukumar will contact you shortly.`
-          );
-          return;
-        } else {
-          setStatus('error');
-          setErrorMessage(result.message || 'Unable to submit enquiry. Please try again.');
-          return;
-        }
-      } catch (err) {
+      if (result.success) {
+        setStatus('success');
+        setSuccessMessage(
+          `Thank you, ${formData.name}! Your enquiry for ${formData.service} has been delivered directly to ${BRAND_INFO.email}. Muthukumar will contact you shortly.`
+        );
+      } else {
         setStatus('error');
-        setErrorMessage('Network connection error. Please try again later.');
-        return;
+        setErrorMessage(result.message || 'Unable to submit enquiry. Please check your details and try again.');
       }
+    } catch (err) {
+      setStatus('error');
+      setErrorMessage('Network connection error. Please try again or email directly to muthukumar41.dev@gmail.com');
     }
-
-    // Fallback
-    setTimeout(() => {
-      setStatus('success');
-      setSuccessMessage(
-        `Thank you, ${formData.name}! Your enquiry for ${formData.service} has been submitted. Muthukumar will contact you shortly.`
-      );
-    }, 700);
   };
 
   const handleReset = () => {
