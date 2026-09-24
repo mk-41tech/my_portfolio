@@ -84,11 +84,12 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService }) => {
         body: JSON.stringify({
           access_key: accessKey,
           from_name: formData.name,
-          subject: `New Client Enquiry from ${formData.name} - ${formData.service}`,
+          subject: `New Freelance Enquiry from ${formData.name} - ${formData.service}`,
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
           service: formData.service,
+          budget: formData.budget || 'Not specified',
           message: formData.projectDescription,
         }),
       });
@@ -98,7 +99,7 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService }) => {
       if (result.success) {
         setStatus('success');
         setSuccessMessage(
-          `Thank you, ${formData.name}! Your enquiry for ${formData.service} has been delivered directly to ${BRAND_INFO.email}. Muthukumar will contact you shortly.`
+          `Thank you, ${formData.name}! Your project enquiry has been sent directly to ${BRAND_INFO.email}. Muthukumar will review your requirements and reach out promptly.`
         );
       } else {
         setStatus('error');
@@ -137,8 +138,8 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService }) => {
             <Sparkles className="w-4 h-4 text-cyan-600" />
             <span>Get in Touch</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-normal">
-            Let's Build Something Together
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+            Let's Work Together
           </h2>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
             Have an idea, business requirement, or project in mind? Let's discuss it and build a customized solution that fits your needs and budget.
@@ -391,10 +392,26 @@ export const Contact: React.FC<ContactProps> = ({ preselectedService }) => {
                     </div>
                   </div>
 
+                  {/* Budget (Optional) Row */}
+                  <div className="space-y-2">
+                    <label htmlFor="budget" className="text-sm sm:text-[15px] font-semibold text-slate-700 block">
+                      Budget <span className="text-slate-400 font-normal">(Optional)</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="budget"
+                      name="budget"
+                      value={formData.budget || ''}
+                      onChange={handleChange}
+                      placeholder="e.g. ₹15,000 - ₹30,000 / Flexible"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-sm sm:text-base text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:border-cyan-600 focus:ring-2 focus:ring-cyan-600/20 transition-all"
+                    />
+                  </div>
+
                   {/* Project Description */}
                   <div className="space-y-2">
                     <label htmlFor="projectDescription" className="text-sm sm:text-[15px] font-semibold text-slate-700 block">
-                      Project Description &amp; Requirements *
+                      Project Description *
                     </label>
                     <textarea
                       id="projectDescription"

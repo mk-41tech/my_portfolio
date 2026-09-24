@@ -14,6 +14,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenTerms }) =>
 
   const navLinks = [
     { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
@@ -33,14 +34,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenTerms }) =>
           {/* Brand Col */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-600 to-teal-600 border border-cyan-500/40 flex items-center justify-center text-white shadow-sm shadow-cyan-600/20">
                 <Code className="w-5 h-5" />
               </div>
               <div className="flex flex-col">
                 <span className="font-bold text-lg text-white">
-                  {BRAND_INFO.brandName}
+                  {BRAND_INFO.owner}
                 </span>
-                <span className="text-xs text-slate-400">by {BRAND_INFO.owner}</span>
+                <span className="text-xs text-slate-400">{BRAND_INFO.subtitle}</span>
               </div>
             </div>
 
@@ -61,7 +62,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenTerms }) =>
           {/* Quick Links */}
           <div className="lg:col-span-3 space-y-3">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-200">
-              Quick Navigation
+              Quick Links
             </h3>
             <ul className="grid grid-cols-2 gap-2.5 text-sm sm:text-[15px] text-slate-400">
               {navLinks.map((link) => (
@@ -148,7 +149,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenTerms }) =>
                 onClick={onOpenTerms}
                 className="hover:text-cyan-400 transition-colors text-left lg:text-right cursor-pointer"
               >
-                Terms & Conditions
+                Terms &amp; Conditions
               </button>
             </div>
           </div>
@@ -160,7 +161,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenTerms }) =>
           <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2 sm:gap-4">
             <span>{BRAND_INFO.role}</span>
             <span className="w-1.5 h-1.5 rounded-full bg-slate-600 hidden sm:inline-block" />
-            <span className="text-emerald-400 font-medium">Available for Freelance</span>
+            <span className="text-emerald-400 font-medium">{BRAND_INFO.availability}</span>
           </div>
         </div>
       </div>

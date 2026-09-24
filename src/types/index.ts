@@ -7,19 +7,27 @@ export interface ServiceItem {
   capabilities: string[];
 }
 
+export type ProjectStatus = 'ongoing' | 'completed' | 'upcoming';
+
 export interface ProjectItem {
   id: string;
   title: string;
+  status: ProjectStatus;
   category: string;
-  shortDescription: string;
-  fullDescription: string;
+  client?: string;
+  description: string;
+  shortDescription?: string;
+  fullDescription?: string;
   keyHighlights: string[];
+  features?: string[];
   technologies: string[];
   liveUrl?: string;
   liveUrlText?: string;
+  isLive: boolean;
   statusNote?: string;
-  client?: string;
   architectureHighlights?: string[];
+  productStructure?: string;
+  phaseScope?: string[];
 }
 
 export interface SkillCategory {

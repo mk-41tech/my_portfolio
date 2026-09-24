@@ -11,7 +11,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center pt-28 pb-16 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50/50">
+    <section id="home" className="relative min-h-[92vh] flex items-center pt-28 pb-16 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50/50">
       {/* Ambient background glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 sm:w-[600px] h-72 sm:h-[600px] bg-cyan-500/8 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none -z-10" />
       <div className="absolute top-1/3 right-10 w-72 sm:w-[400px] h-72 sm:h-[400px] bg-emerald-500/8 rounded-full blur-[100px] sm:blur-[120px] pointer-events-none -z-10" />
@@ -39,17 +39,26 @@ export const Hero: React.FC = () => {
               </div>
             </div>
 
-            {/* Main Headline */}
+            {/* Main Headline & Identity */}
             <div className="space-y-3">
-              <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-slate-900 leading-snug">
+              <div className="space-y-1">
+                <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-cyan-700 block">
+                  {BRAND_INFO.subtitle}
+                </span>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                  {BRAND_INFO.owner}
+                </h1>
+              </div>
+
+              <p className="text-xl sm:text-2xl lg:text-[28px] font-bold text-slate-800 leading-snug">
                 Building Digital Solutions{' '}
                 <span className="text-gradient-cyan block sm:inline">
                   That Fit Your Needs &amp; Budget
                 </span>
-              </h1>
+              </p>
               
               {/* Tagline Highlight */}
-              <div className="inline-block px-3.5 py-1.5 rounded-lg bg-cyan-50 border border-cyan-200 text-cyan-800 font-medium text-sm sm:text-base tracking-normal shadow-xs">
+              <div className="inline-block px-4 py-1.5 rounded-lg bg-cyan-50 border border-cyan-200 text-cyan-800 font-semibold text-sm sm:text-base tracking-normal shadow-xs">
                 &ldquo;{BRAND_INFO.tagline}&rdquo;
               </div>
             </div>
@@ -95,7 +104,7 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Hero Tech & Terminal Card */}
+          {/* Right Hero Tech & Terminal Card with Profile Support */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-sm sm:max-w-md">
               
@@ -115,20 +124,23 @@ export const Hero: React.FC = () => {
                     </div>
                     <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-400">
                       <Terminal className="w-4 h-4 text-cyan-400" />
-                      <span>mk-solutions.config.ts</span>
+                      <span>muthukumar.dev.ts</span>
                     </div>
                   </div>
 
                   {/* Code snippet */}
                   <div className="space-y-1.5 text-xs sm:text-sm leading-relaxed">
                     <p className="text-slate-400">
-                      <span className="text-purple-400">const</span> <span className="text-cyan-300">developer</span> = &#123;
+                      <span className="text-purple-400">const</span> <span className="text-cyan-300">freelancer</span> = &#123;
                     </p>
                     <p className="pl-4 text-slate-300">
                       <span className="text-slate-400">name:</span> <span className="text-emerald-300">'{BRAND_INFO.owner}'</span>,
                     </p>
                     <p className="pl-4 text-slate-300">
-                      <span className="text-slate-400">brand:</span> <span className="text-emerald-300">'{BRAND_INFO.brandName}'</span>,
+                      <span className="text-slate-400">role:</span> <span className="text-emerald-300">'{BRAND_INFO.subtitle}'</span>,
+                    </p>
+                    <p className="pl-4 text-slate-300">
+                      <span className="text-slate-400">focus:</span> <span className="text-emerald-300">'{BRAND_INFO.role}'</span>,
                     </p>
                     <p className="pl-4 text-slate-300">
                       <span className="text-slate-400">location:</span> <span className="text-emerald-300">'{BRAND_INFO.location}'</span>,
@@ -137,7 +149,7 @@ export const Hero: React.FC = () => {
                       <span className="text-slate-400">mission:</span> <span className="text-amber-300">'{BRAND_INFO.tagline}'</span>,
                     </p>
                     <p className="pl-4 text-slate-300">
-                      <span className="text-slate-400">status:</span> <span className="text-cyan-400 font-semibold">'Available for Projects'</span>
+                      <span className="text-slate-400">status:</span> <span className="text-cyan-400 font-semibold">'Available for Freelance Projects'</span>
                     </p>
                     <p className="text-slate-400">&#125;;</p>
                   </div>
@@ -146,28 +158,36 @@ export const Hero: React.FC = () => {
                   <div className="pt-2.5 border-t border-slate-800/80 flex items-center justify-between text-xs sm:text-sm text-slate-400">
                     <span className="flex items-center gap-1.5 text-emerald-400 font-medium">
                       <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                      Ready to build
+                      Ready for projects
                     </span>
-                    <span className="text-cyan-400 font-medium">TypeScript &bull; React &bull; AI</span>
+                    <span className="text-cyan-400 font-medium">React &bull; Node &bull; AI</span>
                   </div>
                 </div>
 
-                {/* Identity & Highlight Card */}
-                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                {/* Profile Identity & Location Card with Profile Image */}
+                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-500 to-teal-600 text-white font-bold flex items-center justify-center text-base shadow-sm">
-                      MK
+                    <div className="relative">
+                      <img
+                        src={BRAND_INFO.profileImage}
+                        alt="Muthukumar"
+                        className="w-12 h-12 rounded-xl object-cover border border-cyan-400/40 shadow-sm"
+                        onError={(e) => {
+                          // Fallback to initials if image path fails
+                          (e.target as HTMLElement).style.display = 'none';
+                        }}
+                      />
+                      <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-emerald-500 border-2 border-white rounded-full"></span>
                     </div>
                     <div>
                       <div className="text-base font-bold text-slate-900 flex items-center gap-1.5">
                         <span>{BRAND_INFO.owner}</span>
-                        <span className="w-2 h-2 rounded-full bg-cyan-600" />
                       </div>
-                      <p className="text-xs sm:text-sm text-cyan-700 font-medium">{BRAND_INFO.brandName}</p>
+                      <p className="text-xs text-cyan-700 font-medium">{BRAND_INFO.subtitle}</p>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-1.5 text-xs sm:text-sm text-slate-700 bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-xs font-medium">
+                  <div className="flex items-center gap-1.5 text-xs text-slate-700 bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-xs font-medium shrink-0">
                     <MapPin className="w-3.5 h-3.5 text-cyan-600 shrink-0" />
                     <span>Tirunelveli</span>
                   </div>

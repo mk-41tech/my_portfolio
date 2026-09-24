@@ -26,7 +26,7 @@ export const FAQ: React.FC = () => {
             Frequently Asked Questions
           </h2>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            Everything you need to know about working with MK Technology &amp; Services, pricing approach, project timelines, and post-delivery maintenance.
+            Everything you need to know about working with Muthukumar, pricing approach, project timelines, and post-delivery maintenance.
           </p>
         </div>
 

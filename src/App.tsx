@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { Hero } from './components/sections/Hero';
+import { About } from './components/sections/About';
 import { Services } from './components/sections/Services';
 import { Projects } from './components/sections/Projects';
 import { Skills } from './components/sections/Skills';
@@ -32,6 +33,7 @@ export function App() {
       {/* Main Page Content */}
       <main className="flex-1 w-full overflow-x-hidden">
         <Hero />
+        <About />
         <Services onSelectService={handleSelectService} />
         <Projects />
         <Skills />

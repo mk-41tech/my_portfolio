@@ -1,7 +1,8 @@
 import { ServiceItem, ProjectItem, SkillCategory, ProcessStep, FAQItem } from '../types';
 
 export const BRAND_INFO = {
-  brandName: 'MK Technology & Services',
+  brandName: 'Muthukumar',
+  subtitle: 'Freelance Software Developer',
   owner: 'Muthukumar',
   role: 'Full Stack Developer | AI & Data Solutions',
   tagline: 'Developing Solutions with minimal cost',
@@ -16,7 +17,7 @@ export const BRAND_INFO = {
   github: 'https://github.com/muthukumar41-dev',
   profileImage: '/assets/Muthukumar Photo.jpg',
   pricingStatement: 'Contact me for a quote',
-  copyright: '© 2026 MK Technology & Services. All Rights Reserved.'
+  copyright: '© 2026 Muthukumar. All Rights Reserved.'
 };
 
 export const SERVICES: ServiceItem[] = [
@@ -83,20 +84,115 @@ export const SERVICES: ServiceItem[] = [
 ];
 
 export const PROJECTS: ProjectItem[] = [
+  // ONGOING PROJECTS (2)
+  {
+    id: 'social-media-management-tool',
+    title: 'Social Media Management Tool',
+    status: 'ongoing',
+    category: 'Social Media Management SaaS / Web Application',
+    description: 'A centralized web-based social media management platform designed to help organizations and brands manage their social media activities from a single workspace. The platform is currently under development and is intended to provide a unified workflow for connecting social accounts, creating content, scheduling posts, managing approvals, and viewing social media-related information.',
+    shortDescription: 'A centralized web-based social media management platform designed to help organizations and brands manage social media activities, scheduling, and approvals from a single workspace.',
+    fullDescription: 'A centralized web-based social media management platform designed to help organizations and brands manage their social media activities from a single workspace. The platform is currently under development and is intended to provide a unified workflow for connecting social accounts, creating content, scheduling posts, managing approvals, and viewing social media-related information.',
+    phaseScope: ['Instagram', 'Facebook', 'LinkedIn', 'TikTok', 'YouTube'],
+    productStructure: 'Organization → Brand/Workspace → Social Accounts → Content → Calendar → Publishing → Analytics / Approvals',
+    statusNote: 'ONGOING — Currently in Development',
+    isLive: false,
+    technologies: [
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Node.js',
+      'Workspace Architecture',
+      'Post Scheduling Engine',
+      'Content Approvals',
+      'Analytics Dashboard'
+    ],
+    features: [
+      'Authentication',
+      'Organization/workspace management',
+      'Brand/workspace structure',
+      'Social account management',
+      'Dashboard',
+      'Content Composer',
+      'Media Library',
+      'Post creation',
+      'Scheduling',
+      'Publishing workflow',
+      'Calendar',
+      'Content approvals',
+      'Team collaboration',
+      'Role-based access',
+      'Analytics dashboard structure',
+      'Responsive web interface'
+    ],
+    keyHighlights: [
+      'Multi-tenant Organization & Brand/Workspace hierarchical management',
+      'Phase 1 Social Integration: Instagram, Facebook, LinkedIn, TikTok & YouTube',
+      'Rich Content Composer with integrated Media Library & post creation tools',
+      'Visual Calendar-based content planning and scheduled publishing engine',
+      'Collaborative content approval workflows with role-based access control',
+      'Modern, clean white-background SaaS interface with full tablet & mobile responsiveness'
+    ]
+  },
+  {
+    id: 'aadharsh-workhub-crm',
+    title: 'Aadharsh WorkHub – CRM',
+    status: 'ongoing',
+    category: 'CRM / Work Management / Business Operations Platform',
+    description: 'An ongoing CRM and work-management platform designed to centralize business operations, staff workdays, client jobs, daily activities, dispatch, enquiries, expenses, reminders, and email follow-ups through a unified workspace.',
+    shortDescription: 'An ongoing CRM and work-management platform designed to centralize business operations, staff workdays, client jobs, daily activities, dispatch, enquiries, expenses, reminders, and email follow-ups through a unified workspace.',
+    fullDescription: 'An ongoing CRM and work-management platform designed to centralize business operations, staff workdays, client jobs, daily activities, dispatch, enquiries, expenses, reminders, and email follow-ups through a unified workspace. It empowers businesses with end-to-end operational visibility, structured workday accountability, and smooth communication pipelines.',
+    statusNote: 'ONGOING — Currently in Development',
+    isLive: false,
+    technologies: [
+      'CRM',
+      'Work Management',
+      'Business Operations',
+      'Staff Management',
+      'Client Jobs',
+      'Enquiries',
+      'Dispatch',
+      'Attendance',
+      'Workflow Management'
+    ],
+    features: [
+      'Overview',
+      'My Workday',
+      'Reminders',
+      'Client Jobs',
+      'Daily Work',
+      'Dispatch',
+      'Enquiries',
+      'Staff Expenses',
+      'Email Follow-ups',
+      'Staff Access',
+      'Attendance/workday tracking',
+      'Daily reporting',
+      'Sending daily reports to Admin and HR'
+    ],
+    keyHighlights: [
+      'Centralized operations dashboard unifying client jobs, enquiries, and dispatch workflows',
+      'Workday & attendance tracking with structured daily reporting to Admin and HR',
+      'Client job pipeline tracking from initial enquiry through delivery and dispatch',
+      'Staff expense tracking, automated milestone reminders, and email follow-up queues',
+      'Granular staff access management tailored for diverse operational departments'
+    ]
+  },
+
+  // COMPLETED PROJECTS (2)
   {
     id: 'rethika-enterprises',
     title: 'Rethika Enterprises – Corporate Gifting Platform',
-    category: 'Corporate / E-commerce / Business Platform',
-    shortDescription: 'A complete corporate gifting platform enabling catalogue browsing, custom branding enquiries, RFQ quotation workflows, supplier coordination, and comprehensive back-office administration.',
-    fullDescription: 'Rethika Enterprises required a scalable, end-to-end digital ecosystem for corporate gifting. The platform allows clients to explore extensive corporate gifting catalogues, configure branding preferences, and request tailored bulk quotations. On the operations side, an administrative dashboard empowers management of supplier relationships, product inventories, Excel imports, quotation lifecycles, and direct client correspondence.',
-    keyHighlights: [
-      'Dynamic product catalogue with custom branding enquiry workflows',
-      'Supplier management module & RFQ (Request for Quotation) tracking',
-      'Secure back-office administration for orders, catalogue & lead management',
-      'Bulk data processing with Excel Import integration',
-      'Instant communication via WhatsApp Click-to-Chat integration',
-      'Edge-deployed serverless architecture for blazing fast global access'
-    ],
+    status: 'completed',
+    category: 'Corporate Gifting / Business Platform',
+    client: 'Rethika Enterprises',
+    description: 'A corporate gifting platform that allows customers to browse and select products, customize branding, submit enquiries, and receive quotations. The platform also includes supplier management, RFQ/quotation workflows, and an admin portal for managing products, suppliers, enquiries, and orders.',
+    shortDescription: 'A corporate gifting platform enabling product browsing, branding customization, RFQ quotation workflows, supplier coordination, and comprehensive back-office administration.',
+    fullDescription: 'A corporate gifting platform that allows customers to browse and select products, customize branding, submit enquiries, and receive quotations. The platform also includes supplier management, RFQ/quotation workflows, and an admin portal for managing products, suppliers, enquiries, and orders.',
+    isLive: true,
+    liveUrl: 'https://rethikaenterprises.com',
+    liveUrlText: 'View Live Website',
+    statusNote: 'COMPLETED',
     technologies: [
       'React',
       'TypeScript',
@@ -104,40 +200,118 @@ export const PROJECTS: ProjectItem[] = [
       'Vinext / Next.js',
       'Tailwind CSS',
       'Cloudflare',
-      'Cloudflare D1 (SQL)',
-      'Cloudflare R2 Storage',
+      'Cloudflare D1',
+      'Cloudflare R2',
       'Drizzle ORM',
+      'SQL',
       'Excel Import',
       'WhatsApp Click-to-Chat'
     ],
-    liveUrl: 'https://rethikaenterprises.com',
-    liveUrlText: 'Visit Rethika Enterprises',
-    client: 'Rethika Enterprises'
+    features: [
+      'Product browsing',
+      'Product selection',
+      'Product customization',
+      'Branding/customization options',
+      'Customer enquiries',
+      'Quotation workflow',
+      'Supplier management',
+      'RFQ workflow',
+      'Order management',
+      'Admin portal',
+      'Product management',
+      'Supplier management',
+      'Enquiry management',
+      'Excel import',
+      'WhatsApp Click-to-Chat'
+    ],
+    keyHighlights: [
+      'Dynamic product catalogue with custom branding enquiry and preview workflows',
+      'Supplier management module & RFQ (Request for Quotation) tracking system',
+      'Secure back-office administration portal for orders, catalogue & lead management',
+      'Bulk data processing with Excel Import integration',
+      'Instant communication via WhatsApp Click-to-Chat integration',
+      'Edge-deployed serverless architecture with Cloudflare D1 SQL and R2 storage'
+    ]
   },
   {
     id: 'roots-education-mile',
     title: 'ROOTS – The Education Mile',
-    category: 'Education / Social Impact / Event',
-    shortDescription: 'Official web platform for the prestigious ROOTS Education Conclave by Vidhya Vidhai Foundation, spotlighting grassroots educational journeys, keynotes, multimedia galleries, and participant registration.',
-    fullDescription: 'ROOTS is an impactful annual education conclave organized by the Vidhya Vidhai Foundation. The platform serves as the primary digital gateway for the conclave, communicating the mission, spotlighting education leaders, displaying video archives and gallery exhibits, and handling registrations for educators, students, and community changemakers across the state.',
+    status: 'completed',
+    category: 'Education / Event / Social Impact',
+    client: 'Vidhya Vidhai Foundation',
+    description: 'A website created for the ROOTS Education Conclave by Vidhya Vidhai Foundation. The website provides information about: Conclave, ROOTS journey, Participants, Testimonials, Videos, Gallery, Registration, Event information.',
+    shortDescription: 'Official website for the ROOTS Education Conclave by Vidhya Vidhai Foundation, featuring conclave agenda, journey archives, delegate registration, and keynote galleries.',
+    fullDescription: 'A website created for the ROOTS Education Conclave by Vidhya Vidhai Foundation. The website provides information about: Conclave, ROOTS journey, Participants, Testimonials, Videos, Gallery, Registration, Event information.',
+    isLive: true,
+    liveUrl: 'https://vidhyavidhai.org/index.php/roots/',
+    liveUrlText: 'View Live Website',
+    statusNote: 'Note: The live website represents the 2025 ROOTS website. The 2026 website is a separate development effort and must not be represented as the completed live version.',
+    technologies: [
+      'React.js',
+      'TypeScript',
+      'HTML',
+      'CSS',
+      'Node.js'
+    ],
+    features: [
+      'Conclave Overview',
+      'ROOTS Journey Showcase',
+      'Participant & Speaker Directory',
+      'Testimonials',
+      'Video Archives',
+      'Multimedia Gallery',
+      'Delegate Registration',
+      'Event Information'
+    ],
     keyHighlights: [
       'Comprehensive event agenda, speaker showcases, and keynote schedules',
       'Interactive multimedia gallery and archived video presentations',
       'Seamless attendee and delegate registration workflows',
       'Lightweight, high-accessibility UI optimized for diverse mobile devices',
       'Dedicated journey showcase detailing the grassroots impact of Vidhya Vidhai Foundation'
-    ],
+    ]
+  },
+
+  // UPCOMING PROJECTS (1)
+  {
+    id: 'raghul-brand-website',
+    title: 'Raghul — Brand Website & Product Management System',
+    status: 'upcoming',
+    category: 'Brand Website + Product Management System',
+    client: 'Raghul',
+    description: 'An upcoming brand website project for Raghul, focused on creating a professional digital presence with dedicated Home, About, Products, Why Choose Us, and Contact sections. The planned solution will include direct email and WhatsApp communication, an enquiry form with email notifications, and a backend-powered product management system with an admin portal for updating product information.',
+    shortDescription: 'An upcoming brand website project for Raghul, focused on creating a professional digital presence with dedicated Home, About, Products, Why Choose Us, and Contact sections.',
+    fullDescription: 'An upcoming brand website project for Raghul, focused on creating a professional digital presence with dedicated Home, About, Products, Why Choose Us, and Contact sections. The planned solution will include direct email and WhatsApp communication, an enquiry form with email notifications, and a backend-powered product management system with an admin portal for updating product information.',
+    statusNote: 'UPCOMING',
+    isLive: false,
     technologies: [
-      'React.js',
-      'TypeScript',
-      'HTML5',
-      'CSS3',
-      'Node.js'
+      'Brand Website Architecture',
+      'Product Management System',
+      'Admin Portal',
+      'Email Notifications',
+      'WhatsApp Direct Messaging',
+      'Enquiry Form Workflow'
     ],
-    liveUrl: 'https://vidhyavidhai.org/Roots/',
-    liveUrlText: 'View ROOTS 2025 Website',
-    statusNote: 'Note: Showcasing the ROOTS 2025 Edition. The 2026 ROOTS platform is currently under active development.',
-    client: 'Vidhya Vidhai Foundation'
+    features: [
+      'Home page',
+      'About Us',
+      'Product section/page',
+      'Contact Us',
+      'Why Choose Us',
+      'Direct email communication',
+      'WhatsApp direct messaging',
+      'Contact enquiry form',
+      'Direct email notification after form submission',
+      'Backend-powered product management',
+      'Admin portal',
+      'Product updates through the backend'
+    ],
+    keyHighlights: [
+      'Dedicated brand sections: Home, About Us, Products, Why Choose Us, and Contact Us',
+      'Direct customer communication channels via integrated Email and WhatsApp messaging',
+      'Contact enquiry form with instant automated direct email notification upon submission',
+      'Backend-powered product management system with a secure admin portal for live product updates'
+    ]
   }
 ];
 
@@ -146,7 +320,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     category: 'Frontend Development',
     description: 'Building clean, reactive, and accessible user interfaces with modern toolchains.',
     icon: 'Layout',
-    skills: ['React', 'TypeScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Next.js']
+    skills: ['React', 'TypeScript', 'HTML', 'CSS', 'Tailwind CSS', 'Next.js']
   },
   {
     category: 'Backend & APIs',
@@ -241,7 +415,7 @@ export const FAQS: FAQItem[] = [
   },
   {
     id: 'faq-2',
-    question: 'How can I start a project with MK Technology & Services?',
+    question: 'How can I start a project with Muthukumar?',
     answer: 'Starting a project is simple: reach out via the Contact Form on this page or email me directly at muthukumar41.dev@gmail.com with your project idea or requirements. We will schedule a discussion to understand your goals, define the scope, and prepare a tailored quote.'
   },
   {
@@ -282,6 +456,6 @@ export const FAQS: FAQItem[] = [
   {
     id: 'faq-10',
     question: 'How can I request a quote?',
-    answer: 'You can scroll to the Contact section below, fill in your contact details, select the service you need, and provide a short summary of your requirements. Alternatively, you can directly email muthukumar41.dev@gmail.com or call 9943398882.'
+    answer: 'You can scroll to the Contact section below, fill in your contact details, select the service you need, and provide a short summary of your requirements. Alternatively, you can directly email muthukumar41.dev@gmail.com or call +91 99433 98882.'
   }
 ];

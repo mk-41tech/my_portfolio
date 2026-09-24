@@ -26,7 +26,7 @@ export const Testimonials: React.FC = () => {
             What Clients Say
           </h2>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            Authenticity and trust are foundational to MK Technology &amp; Services. Verified testimonials will be published as recent project cohorts launch.
+            Authenticity and trust are foundational to my work as a freelance software developer. Verified testimonials will be published as recent project cohorts launch.
           </p>
         </div>
 

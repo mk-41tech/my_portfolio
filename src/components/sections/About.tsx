@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, CheckCircle2, ShieldCheck, Zap, MessagesSquare, Headphones, Wrench, Sparkles, MapPin } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, ShieldCheck, Zap, MessagesSquare, Headphones, Wrench, Sparkles, MapPin, Briefcase } from 'lucide-react';
 import { BRAND_INFO } from '../../data/portfolioData';
 
 export const About: React.FC = () => {
@@ -49,14 +49,14 @@ export const About: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs font-semibold uppercase tracking-wider shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
-            <span>About MK Technology &amp; Services</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-800 text-xs sm:text-sm font-semibold uppercase tracking-wider shadow-xs">
+            <Sparkles className="w-4 h-4 text-cyan-600" />
+            <span>About Muthukumar</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-normal">
-            Meet Muthukumar — Your Dedicated Digital Partner
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 tracking-normal">
+            Meet Muthukumar — Freelance Software Developer
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
             Practical digital engineering with a firm commitment to affordability, customization, and long-term client success.
           </p>
         </div>
@@ -68,34 +68,51 @@ export const About: React.FC = () => {
           <div className="lg:col-span-5">
             <div className="bg-slate-50 rounded-2xl p-6 sm:p-8 space-y-6 relative overflow-hidden border border-slate-200/90 shadow-md">
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-600 via-teal-600 to-emerald-600 border border-cyan-400/40 text-white font-extrabold text-xl flex items-center justify-center shrink-0 shadow-md shadow-cyan-600/20">
-                  MK
+                <div className="relative shrink-0">
+                  <img
+                    src={BRAND_INFO.profileImage}
+                    alt="Muthukumar"
+                    className="w-20 h-20 rounded-2xl object-cover border-2 border-cyan-500/30 shadow-md"
+                    onError={(e) => {
+                      (e.target as HTMLElement).style.display = 'none';
+                    }}
+                  />
+                  <span className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-2 border-white rounded-full"></span>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900">{BRAND_INFO.owner}</h3>
-                  <p className="text-xs font-semibold text-cyan-700">{BRAND_INFO.role}</p>
-                  <p className="text-xs text-slate-500 flex items-center gap-1 mt-1">
-                    <MapPin className="w-3 h-3 text-cyan-600" />
+                  <h3 className="text-xl font-bold text-slate-900">{BRAND_INFO.owner}</h3>
+                  <p className="text-xs sm:text-sm font-semibold text-cyan-700">{BRAND_INFO.subtitle}</p>
+                  <p className="text-xs text-slate-600 font-medium mt-0.5">{BRAND_INFO.role}</p>
+                  <p className="text-xs text-slate-500 flex items-center gap-1 mt-1.5">
+                    <MapPin className="w-3.5 h-3.5 text-cyan-600" />
                     <span>{BRAND_INFO.location}</span>
                   </p>
                 </div>
               </div>
 
-              <div className="space-y-3 text-xs sm:text-sm text-slate-700 leading-relaxed border-t border-slate-200 pt-4">
+              {/* Availability badge */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold">
+                <Briefcase className="w-3.5 h-3.5 text-emerald-600" />
+                <span>{BRAND_INFO.availability}</span>
+              </div>
+
+              <div className="space-y-3 text-sm sm:text-base text-slate-700 leading-relaxed border-t border-slate-200 pt-4">
                 <p>
-                  I am a freelance developer specializing in building websites, mobile apps, AI chatbots, and automated workflows.
+                  I am a freelance software developer specializing in building full-stack web applications, customized business websites, mobile apps, AI chatbots, and intelligent workflow automations.
                 </p>
                 <p>
-                  My focus is simple: <strong className="text-slate-900 font-semibold">Developing Solutions with minimal cost</strong>. I work directly with clients to turn ideas into reliable digital products — without high costs or slow timelines.
+                  My core guiding philosophy is simple:{' '}
+                  <strong className="text-slate-900 font-bold">&ldquo;{BRAND_INFO.tagline}&rdquo;</strong>.
+                  I collaborate directly with founders, business owners, and organizations to translate ideas into high-performing, scalable digital products — with full transparency, fast turnarounds, and minimal overhead.
                 </p>
               </div>
 
               <div className="pt-2">
                 <button
                   onClick={scrollToContact}
-                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-500 hover:to-teal-500 shadow-md shadow-cyan-600/20 transition-all cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm sm:text-base font-semibold text-white bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-500 hover:to-teal-500 shadow-md shadow-cyan-600/20 transition-all cursor-pointer"
                 >
-                  <span>Let's Build Something Together</span>
+                  <span>Let's Work Together</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </button>
               </div>
@@ -115,8 +132,8 @@ export const About: React.FC = () => {
                     <div className="w-10 h-10 rounded-lg bg-cyan-50 border border-cyan-200 flex items-center justify-center text-cyan-700 mb-3.5">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <h4 className="text-sm font-bold text-slate-900 mb-1.5">{pillar.title}</h4>
-                    <p className="text-xs text-slate-600 leading-relaxed">{pillar.description}</p>
+                    <h4 className="text-base font-bold text-slate-900 mb-1.5">{pillar.title}</h4>
+                    <p className="text-sm text-slate-600 leading-relaxed">{pillar.description}</p>
                   </div>
                 </div>
               );
